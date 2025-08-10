@@ -21,11 +21,12 @@
 
 <hr /> -->
 <div>
-    @for (user of userData; track user.name)
+    @for (user of userData; track user.id)
     {
        @if(user.salary > 1000)
        {
          <h5>Name -{{user.name}} Status: {{user.isSingle?"Coder":"Married"}} Salary :{{user.salary}}</h5>
+         <button (click)="SingleUser(user)"> Pass this User</button>
        }
     }
 </div>
@@ -40,4 +41,7 @@
   <h3>{{customerSalary}}</h3>
 }
 
+
+<button (click)="sendStringData()">send string Data</button>
+<button (click)="sendUseData()">Send user Data</button>
 

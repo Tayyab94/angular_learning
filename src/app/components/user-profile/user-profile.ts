@@ -1,6 +1,6 @@
-  import { Attribute, booleanAttribute, Component, Input, numberAttribute } from '@angular/core';
+  import { Attribute, booleanAttribute, Component, EventEmitter, Input, numberAttribute, Output } from '@angular/core';
   import { FormsModule } from '@angular/forms';
-
+  import { UserModel } from "../../../models/user.model"
   function GreetingFunction(value:string)
   {
     return "Hi..!"+value
@@ -31,7 +31,25 @@
 
 
   @Input() userData!:any[]
-  
+
+  @Output() myEvent= new EventEmitter<string>();
+  @Output() userDataEventEmit= new EventEmitter<UserModel[]>();
+
+  @Output() EmitSingleUser= new EventEmitter<UserModel>();
+  sendStringData()
+  {
+    this.myEvent.emit("Hello..!");
+  }
+  sendUseData()
+  {
+    this.userDataEventEmit.emit(this.userData)
+  }
+
+  SingleUser(user:UserModel)
+  {
+    this.EmitSingleUser.emit(user);
+  }
+
     OnChange(e:Event)
     {
       const inputValue= (e.target as HTMLInputElement ).value
