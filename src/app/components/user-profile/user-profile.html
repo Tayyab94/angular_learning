@@ -20,9 +20,24 @@
 
 
 <hr /> -->
-
+<div>
+    @for (user of userData; track user.name)
+    {
+       @if(user.salary > 1000)
+       {
+         <h5>Name -{{user.name}} Status: {{user.isSingle?"Coder":"Married"}} Salary :{{user.salary}}</h5>
+       }
+    }
+</div>
 
 <h2>Welcome {{name}} - Account Status: {{status}}</h2>
 <h3>salary : {{salary}} Age: {{userAge}}</h3>
 
+
 <h4>{{userName}}</h4>
+
+@if(isCustomerActive===true){
+  <h3>{{customerSalary}}</h3>
+}
+
+
