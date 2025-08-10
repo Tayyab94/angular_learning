@@ -1,0 +1,1 @@
+export type UserModel= {id:number, name:string, isSingle: boolean, salary: number }
