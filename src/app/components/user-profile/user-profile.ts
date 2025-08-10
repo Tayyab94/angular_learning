@@ -1,6 +1,8 @@
   import { Attribute, booleanAttribute, Component, EventEmitter, Input, numberAttribute, Output } from '@angular/core';
   import { FormsModule } from '@angular/forms';
   import { UserModel } from "../../../models/user.model"
+import { TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { CountryCodePipe } from '../../pipes/country-code-pipe';
   function GreetingFunction(value:string)
   {
     return "Hi..!"+value
@@ -8,7 +10,7 @@
 
   @Component({
     selector: 'app-user-profile',
-    imports: [FormsModule],
+    imports: [FormsModule, TitleCasePipe, UpperCasePipe, CountryCodePipe],
     templateUrl: './user-profile.html',
     styleUrl: './user-profile.css'
   })
@@ -20,10 +22,10 @@
 
     @Input({transform:booleanAttribute}) isCustomerActive!: boolean;
 
-    name: string="Tayyab"
+    name: string="talha"
     status="Active"
     salary: number=23.3
-
+    phoneNumer:string ="1231231"
     address: string=""
 
     isButtonDisabled=false
