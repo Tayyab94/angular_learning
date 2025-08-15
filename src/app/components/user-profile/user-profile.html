@@ -31,14 +31,14 @@
     }
 </div>
 
-<h2>Welcome {{name | titlecase}} - Account Status: {{status}} phone : {{phoneNumer | countryCode:"USA"}}</h2>
+<h2><span appHighlighted #myCustomerSalary> Welcome {{name | titlecase}} </span> - Account Status: {{status}} phone : {{phoneNumer | countryCode:"USA"}}</h2>
 <h3>salary : {{salary}} Age: {{userAge}}</h3>
 
 
-<h4>{{userName | titlecase}}</h4>
+<h4 >{{userName | titlecase}}</h4>
 
 @if(isCustomerActive===true){
-  <h3>{{customerSalary}}</h3>
+  <h3 >{{customerSalary}}</h3>
 }
 
 
