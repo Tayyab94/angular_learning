@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { UserProfile } from './components/user-profile/user-profile';
 import { CommonModule } from '@angular/common';
 import { UserModel } from '../models/user.model';
+import { Detail } from "./components/detail/detail";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserProfile, CommonModule],
+  imports: [RouterOutlet, CommonModule, Detail],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
