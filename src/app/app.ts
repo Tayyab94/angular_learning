@@ -1,16 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { UserProfile } from './components/user-profile/user-profile';
 import { CommonModule } from '@angular/common';
 import { UserModel } from '../models/user.model';
 import { Detail } from "./components/detail/detail";
 import { A } from './components/a/a';
 import { B1 } from './components/b1/b1';
+import { Navbar } from './components/navbar/navbar';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, A,B1],
+  imports: [RouterOutlet, CommonModule, A, B1, Navbar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
