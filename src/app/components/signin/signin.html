@@ -1,1 +1,67 @@
-<p>signin works!</p>
+
+
+<div class="login-container">
+  <form class="login-form" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <div class="form-header">
+      <h2>Welcome to Signin Page</h2>
+      <p>Please enter your Detail</p>
+    </div>
+
+   
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        required
+        email
+        placeholder="your@email.com"
+        [class.invalid]="email.invalid && email.touched"
+      />
+      
+      <!-- <div class="error-message" *ngIf="email.invalid && email.touched">
+        <span *ngIf="email.errors?.['required']">Email is required</span>
+        <span *ngIf="email.errors?.['email']">Please enter a valid email format</span>
+      </div> -->
+    </div>
+
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        id="password" 
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+        minlength="4"
+        placeholder="••••"
+        [class.invalid]="password.invalid && password.touched"
+      />
+
+      <!-- <div class="error-message" *ngIf="password.invalid && password.touched">
+        <span *ngIf="password.errors?.['required']">Password is required</span>
+        <span *ngIf="password.errors?.['minlength']">Minimum 4 characters required</span>
+      </div> -->
+    </div>
+
+    
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+        Login
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm(registerForm)">
+        Reset
+      </button>
+    </div>
+    
+
+    <div class="form-footer">
+      <p> have an account? <a routerLink="/login" class="signup-link">Login</a></p>
+    </div>
+  </form>
+</div>

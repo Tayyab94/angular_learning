@@ -1,1 +1,77 @@
-<p>login works!</p>
+<!-- 
+
+<form class="container" [formGroup]="loginForm">
+    <h4>login Please</h4>
+    <input type="email" placeholder="Enter Password" [formControl]="email" />
+        <input type="password" placeholder="Enter Password" [formControl]="password" />
+
+        <button class="btn-green" (click)="loginSubmit()">Login</button>
+        <button class="btn-red" (click)="resetForm()">Reset</button>
+</form> -->
+
+
+<div class="login-container">
+  <form class="login-form" [formGroup]="loginForm">
+    <div class="form-header">
+      <h2>Welcome Back</h2>
+      <p>Please enter your credentials to login</p>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        placeholder="your@email.com" 
+        formControlName="email"
+        [class.invalid]="email.invalid && (email.dirty || email.touched)"
+      />
+   
+
+           <div class="error-message" [hidden]="(email.dirty || email.untouched) && email.invalid">
+                        @if (password.errors?.['required']) {
+                    <span>Password is required</span>
+                }
+                @if (password.errors?.['email']) {
+                    <span>enter correct format</span>
+                }
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        id="password" 
+        placeholder="••••••••" 
+        formControlName="password"
+        [class.invalid]="password.invalid && (password.dirty || password.touched)"
+      />
+
+      <div class="error-message" [hidden]="password.untouched || password.valid">
+           
+                     <span [hidden]="password.errors?.['required']">Password is required</span> 
+                        <span [hidden]="password.errors?.['minlength']">Minimum 6 characters required</span>
+          
+      </div>
+      <!-- <div class="error-message" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <span *ngIf="password.errors?.['required']">Password is required</span>
+        <span *ngIf="password.errors?.['minlength']">Minimum 8 characters required</span>
+      </div> -->
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn-primary" (click)="loginSubmit()" [disabled]="loginForm.invalid">
+        Login
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm()">
+        Reset
+      </button>
+    </div>
+
+    <div class="form-footer">
+      <a href="#" class="forgot-password">Forgot password?</a>
+      <p>Don't have an account? <a routerLink="/signin" class="signup-link">Sign up</a></p>
+    </div>
+  </form>
+</div>
