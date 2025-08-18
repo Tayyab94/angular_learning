@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 export class Signin {
 
 
+  constructor(private nagivation: Router){}
     user = {
     email: '',
     password: ''
@@ -20,6 +21,8 @@ export class Signin {
     if (form.valid) {
       console.log('Form submitted', this.user);
       // Add your authentication logic here
+      this.nagivation.navigate(['/login']);
+
     }
   }
 
