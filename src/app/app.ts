@@ -4,10 +4,13 @@ import { UserProfile } from './components/user-profile/user-profile';
 import { CommonModule } from '@angular/common';
 import { UserModel } from '../models/user.model';
 import { Detail } from "./components/detail/detail";
+import { A } from './components/a/a';
+import { B1 } from './components/b1/b1';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, Detail],
+  imports: [RouterOutlet, CommonModule, A,B1],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

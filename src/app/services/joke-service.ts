@@ -22,9 +22,7 @@ export class JokeService {
 
   getJokes()
   {
-    // this.http.get("https://api.chucknorris.io/jokes/random?category=celebrity").subscribe((data)=>{
-
-    // }) 
+    // this.http.get("https://api.chucknorris.io/jokes/random?category=celebrity").subscribe((data)=>{}) 
 
     return this.http.get("https://api.chucknorris.io/jokes/random?category=history");
   }
