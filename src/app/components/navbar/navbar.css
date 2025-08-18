@@ -1,0 +1,22 @@
+div{
+    margin: 10px;
+}
+
+nav{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+ul{
+    list-style: none;
+    gap: 20px;
+    display: flex;
+}
+
+li:hover{
+    cursor: pointer;
+}
+ul li a.active{
+    font-weight: 700;
+}
